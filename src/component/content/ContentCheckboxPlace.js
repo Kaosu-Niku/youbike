@@ -1,4 +1,4 @@
-function ContentCheckboxPlace({ placeName }) {
+function ContentCheckboxPlace({ placeName, check }) {
     return (
         <>
             <div className="content_div_checkbox flex">

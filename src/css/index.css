@@ -97,9 +97,14 @@
 
 .content_checkbox_text {}
 
+.content_div_place_small{
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 60%;
+}
+
 .content_div_place_big {
   flex-direction: column;
-  flex-wrap: wrap;
   width: 75%;
 }
 
