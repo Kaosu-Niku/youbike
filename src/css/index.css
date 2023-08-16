@@ -1,0 +1,159 @@
+* {
+  padding: 0px;
+}
+
+.flex {
+  display: flex;
+}
+
+.header {
+  flex-direction: row;
+  align-items: center;
+}
+
+.header_img {
+  height: 100px;
+  margin-left: 25px;
+  margin-right: 50px;
+}
+
+.header_button {
+  height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 0px;
+  margin-left: 15px;
+  margin-right: 15px;
+  background-color: white;
+  color: black;
+}
+
+.header_button:hover {
+  background-color: gray;
+  color: chartreuse;
+}
+
+.header_blank {
+  width: 50%;
+}
+
+.header_button_login {
+  height: 40px;
+  width: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 0px;
+  border-radius: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  background-color: chartreuse;
+  color: white;
+}
+
+.header_button_login:hover {
+  background-color: green;
+}
+
+.content {
+  flex-direction: column;
+  margin-left: 5%;
+}
+
+.content_label_text {
+  color: green;
+}
+
+.content_div_one {
+  flex-direction: row;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.content_input_place {
+  height: 30px;
+  margin-right: 25px;
+  text-align: center;
+
+}
+
+.content_input_search {
+  height: 30px;
+  margin-right: 5px;
+}
+
+.content_button_search {
+  width: 30px;
+}
+
+.content_div_checkbox {
+  flex-direction: row;
+  justify-content: center;
+  width: 150px;
+}
+
+.content_checkbox_place {
+  width: 15px;
+}
+
+.content_checkbox_text {}
+
+.content_div_place_big {
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 75%;
+}
+
+.content_dl_place_big {
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.content_dl_text_one {
+  width: 15%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.content_dl_text_two {
+  width: 15%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  
+}
+
+.content_dl_text_three {
+  width: 50%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.content_dl_text_four {
+  width: 10%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.content_dl_text_five {
+  width: 10%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.content_dt{
+  background-color: chartreuse;
+}
+
+.content_div_place_small {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.footer {
+  flex-direction: row;
+}
