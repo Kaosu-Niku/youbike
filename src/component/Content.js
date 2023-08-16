@@ -2,26 +2,28 @@ import { useState } from 'react';
 import ContentCheckboxPlace from './content/ContentCheckboxPlace'
 import ContentPlaceData from './content/ContentPlaceData'
 
-function Content() {
-
-    let jsonData; // 包含所有縣市及其對應區域的json格式資料
-    let areaList = ["新北市", "台北市", "基隆市"]; // 所有縣市名稱的列表
-    const [placeList, setPlaceList] = useState(["北投區", "士林區", "大同區", "中山區", "松山區", "內湖區", "萬華區", "中正區", "大安區", "信義區", "南港區", "文山區"]); // 根據選擇的縣市改變的區域名稱的列表
-
-    // 讀取檔案 youbike_test_area.json
-    let areaDataJson = fetch("youbike_test_area.json").then((response) => {
-        // 將內容解析為json格式
-        let jsonPromise = response.json();
-        jsonPromise.then((result) => {
-            jsonData = result;
-            // 獲取所有縣市名稱
-            let areaNameArray = Object.keys(jsonData["all"]);
-            areaNameArray.map((param) => {
-                areaList.push(param);
-            })
+let jsonData; // 包含所有縣市及其對應區域的json格式資料
+let initAreaList = [];
+// 讀取檔案 youbike_test_area.json
+let areaDataJson = fetch("youbike_test_area.json").then((response) => {
+    // 將內容解析為json格式
+    let jsonPromise = response.json();
+    jsonPromise.then((result) => {
+        jsonData = result;
+        // 獲取所有縣市名稱
+        let areaNameArray = Object.keys(jsonData["all"]);
+        let thisAreaList = []
+        areaNameArray.map((param) => {
+            initAreaList.push(param);
         })
-    });
+    })
+});
+console.log(initAreaList);
 
+function Content() {
+    console.log(initAreaList);
+    const [areaList, setAreaList] = useState(initAreaList); // 所有縣市名稱的列表
+    const [placeList, setPlaceList] = useState(["北投區", "士林區", "大同區", "中山區", "松山區", "內湖區", "萬華區", "中正區", "大安區", "信義區", "南港區", "文山區"]); // 根據選擇的縣市改變的區域名稱的列表
     return (
         <>
             <div className="content flex">
@@ -31,15 +33,18 @@ function Content() {
                         {
                             areaList.map((param) => {
                                 <>
-                                    <option value={param} onClick={setPlaceList(jsonData["all"][param])}>{param}</option>
+                                    <option value={param} onClick={() => { setPlaceList( jsonData["all"][param]) }}>{param}</option>
                                 </>
                             })
                         }
                     </select> */}
                     <select className="content_select_place">
-                        <option value={areaList[0]} onClick={() => { }}>{areaList[0]}</option>
-                        <option value={areaList[1]} onClick={() => { }}>{areaList[1]}</option>
-                        <option value={areaList[2]} onClick={() => { }}>{areaList[2]}</option>
+                        <option value={areaList[0]} onClick={() => {}}>{areaList[0]}</option>
+                        <option value={areaList[1]} onClick={() => {}}>{areaList[1]}</option>
+                        <option value={areaList[2]} onClick={() => {}}>{areaList[2]}</option>
+                        <option value={areaList[3]} onClick={() => {}}>{areaList[3]}</option>
+                        <option value={areaList[4]} onClick={() => {}}>{areaList[4]}</option>
+                        <option value={areaList[5]} onClick={() => {}}>{areaList[5]}</option>
                     </select>
                     <input className="content_input_search" placeholder="搜尋站點" />
                     <input className="content_button_search" type="button" />
@@ -56,18 +61,18 @@ function Content() {
                             </>
                         })
                     } */}
-                    <ContentCheckboxPlace placeName={"北投區"}/>
-                    <ContentCheckboxPlace placeName={"士林區"} />
-                    <ContentCheckboxPlace placeName={"大同區"}/>
-                    <ContentCheckboxPlace placeName={"中山區"}/>
-                    <ContentCheckboxPlace placeName={"松山區"}/>
-                    <ContentCheckboxPlace placeName={"內湖區"}/>
-                    <ContentCheckboxPlace placeName={"萬華區"}/>
-                    <ContentCheckboxPlace placeName={"中正區"}/>
-                    <ContentCheckboxPlace placeName={"大安區"}/>
-                    <ContentCheckboxPlace placeName={"信義區"}/>
-                    <ContentCheckboxPlace placeName={"南港區"}/>
-                    <ContentCheckboxPlace placeName={"文山區"}/>
+                    <ContentCheckboxPlace placeName={placeList[0]}/>
+                    <ContentCheckboxPlace placeName={placeList[1]} />
+                    <ContentCheckboxPlace placeName={placeList[2]}/>
+                    <ContentCheckboxPlace placeName={placeList[3]}/>
+                    <ContentCheckboxPlace placeName={placeList[4]}/>
+                    <ContentCheckboxPlace placeName={placeList[5]}/>
+                    <ContentCheckboxPlace placeName={placeList[6]}/>
+                    <ContentCheckboxPlace placeName={placeList[7]}/>
+                    <ContentCheckboxPlace placeName={placeList[8]}/>
+                    <ContentCheckboxPlace placeName={placeList[9]}/>
+                    <ContentCheckboxPlace placeName={placeList[10]}/>
+                    <ContentCheckboxPlace placeName={placeList[11]}/>
                 </div>
                 <div className="content_div_place_big flex">
                     <div className="content_dl_place_big content_dt flex">
