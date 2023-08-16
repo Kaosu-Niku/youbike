@@ -9,15 +9,14 @@ function Content() {
             <div className="content flex">
                 <p className="content_label_text">站點資訊</p>
                 <div className="content_div_one flex">
-                    <datalist id="datalist_place">
+                    <select className="content_select_place">
                         <option value="新北市">新北市</option>
                         <option value="台北市">台北市</option>
                         <option value="基隆市">基隆市</option>
                         <option value="桃園市">桃園市</option>
                         <option value="新竹縣">新竹縣</option>
                         <option value="新竹市">新竹市</option>
-                    </datalist>
-                    <input className="content_input_place" name="" list="datalist_place" />
+                    </select>
                     <input className="content_input_search" placeholder="搜尋站點" />
                     <input className="content_button_search" type="button" />
                 </div>

@@ -69,11 +69,11 @@
   margin-bottom: 15px;
 }
 
-.content_input_place {
+.content_select_place {
   height: 30px;
+  width: 150px;
   margin-right: 25px;
   text-align: center;
-
 }
 
 .content_input_search {
